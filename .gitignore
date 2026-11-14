@@ -1,0 +1,32 @@
+node_modules
+.next
+out
+work
+*.tsbuildinfo
+.env*
+
+# Local environment and hosting state
+.vercel/
+.netlify/
+.env
+.env.*
+!.env.example
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+serviceAccount*.json
+
+# Local databases, Supabase state, and logs
+*.db
+*.sqlite
+*.sqlite3
+supabase/.temp/
+supabase/.branches/
+*.log
+coverage/
+.DS_Store
