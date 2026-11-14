@@ -1,5 +1,9 @@
 # PolyEats
 
+Shared team repository for the PolyEats campus dining prototype.
+
+Contribute changes on a separate branch and open a pull request into `main` so teammates can review them before merging.
+
 An independent student-built Cal Poly campus dining prototype. Next.js App Router, TypeScript, Tailwind CSS, shadcn-style Button (Radix Slot/CVA), and Lucide icons. All sample prices and nutrition are illustrative, not official. No university systems or real payments are connected.
 
 ## Run
@@ -61,12 +65,16 @@ Priorities: (1) authenticated Supabase persistence, scoped staff authorization a
 
 Source is mirrored to https://github.com/evangvaden-collab/PolyEats.
 
-In the original workspace, `origin` remains the Sites source remote so the publishing connection is preserved; `github` is the GitHub remote. To push future reviewed commits from this workspace:
+In the original workspace, `origin` remains the Sites source remote so the publishing connection is preserved; `github` is the GitHub remote. Follow the team workflow: create a feature branch, commit changes there, and open a pull request into `main`. For a new change from this workspace:
 
 ```sh
 git status
 git diff --cached
-git push github main
+git fetch github
+git switch -c feature/your-change github/main
+# Apply your changes and commit them on this branch.
+git push -u github HEAD
+gh pr create --repo evangvaden-collab/PolyEats --base main
 ```
 
 A fresh clone from GitHub uses GitHub as `origin` normally. Authenticate on your own computer with `gh auth login` followed by `gh auth setup-git`, or use your existing SSH configuration. Never put a personal access token in the remote URL, source files, or commits. Do not force-push. Fetch and inspect any new remote commits before reconciling divergent history.
