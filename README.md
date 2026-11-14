@@ -56,3 +56,19 @@ Priorities: (1) authenticated Supabase persistence, scoped staff authorization a
 ## Verification
 
 `npm test` covers checkout deductions, item snapshots, empty and insufficient-funds rejection, and restaurant restrictions. `npm run build` checks the production export and TypeScript. Browser visual and multi-tab end-to-end QA must still be performed; the supplied execution environment did not expose the supported browser QA tool.
+
+## GitHub source repository
+
+Source is mirrored to https://github.com/evangvaden-collab/PolyEats.
+
+In the original workspace, `origin` remains the Sites source remote so the publishing connection is preserved; `github` is the GitHub remote. To push future reviewed commits from this workspace:
+
+```sh
+git status
+git diff --cached
+git push github main
+```
+
+A fresh clone from GitHub uses GitHub as `origin` normally. Authenticate on your own computer with `gh auth login` followed by `gh auth setup-git`, or use your existing SSH configuration. Never put a personal access token in the remote URL, source files, or commits. Do not force-push. Fetch and inspect any new remote commits before reconciling divergent history.
+
+`.gitignore` excludes environment files, private keys, common credential files, local databases, generated output, dependency folders and local hosting state. `.openai/hosting.json` is intentionally tracked deployment metadata, not a credential. Always inspect staged changes before committing; ignore rules do not protect secrets already tracked. The demo staff code is intentionally public and must not be used for production access.
